@@ -1,9 +1,16 @@
 @value makerGreen, makerLightGrey from '../../common/colors.css';
 
 .editor {
+  /* height: 750px; */
+  overflow-y: scroll;
   flex-basis: 50%;
   border-right: 1px solid makerLightGrey;
   padding: 0.5em 2em;
+}
+
+/* 스크롤바 숨기기 */
+.editor::-webkit-scrollbar {
+  display: none; 
 }
 
 .title {

@@ -1,7 +1,14 @@
 @value makerGreen from '../../common/colors.css';
 
 .preview {
+  /* height: 750px; */
+  overflow-y: scroll;
   flex-basis: 50%;
+}
+
+/* 스크롤바 숨기기 */
+.preview::-webkit-scrollbar {
+  display: none; 
 }
 
 .title {

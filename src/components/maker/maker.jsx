@@ -1,55 +1,33 @@
 import React, { useEffect, useState } from 'react';
-import { useNavigate } from 'react-router-dom';
+import { useLocation, useNavigate } from 'react-router-dom';
 import Editor from '../editor/editor';
 import Footer from '../footer/footer';
 import Header from '../header/header';
 import Preview from '../preview/preview';
 import styles from './maker.module.css'
-const Maker = ({FileInput, authService}) => {
-  const [cards,setCards] = useState({
-    '1':{
-      id: '1',
-      name: 'Ellie',
-      company: 'Samsung',
-      theme: 'dark',
-      title: 'Software Engineer',
-      email: 'wldusdl246@naver.com',
-      message: 'go for it',
-      fileName: 'jiyeon',
-      fileURL: null,
-    },
-    '2':{
-      id: '2',
-      name: 'Ellie2',
-      company: 'Samsung',
-      theme: 'light',
-      title: 'Software Engineer',
-      email: 'wldusdl246@naver.com',
-      message: 'go for it',
-      fileName: 'jiyeon',
-      fileURL: 'ellie.png',
-
-    },
-    '3':{
-      id: '3',
-      name: 'Ellie3',
-      company: 'Samsung',
-      theme: 'colorful',
-      title: 'Software Engineer',
-      email: 'wldusdl246@naver.com',
-      message: 'go for it',
-      fileName: 'jiyeon',
-      fileURL: null,
-    },
-  });
+const Maker = ({FileInput, authService, cardRepository}) => {
+  const navigateState = useLocation().state;
+  const [cards,setCards] = useState({});
+  const [userId, setUserId] = useState(navigateState && navigateState.id);
   const navigate = useNavigate()
   const onLogout = () => {
     authService.logout();
   }
   
   useEffect( () => {
+    if(!userId) return
+    const stopSync = cardRepository.syncCard(userId, cards => {
+      setCards(cards)
+    })
+    return () => stopSync();
+  }, [userId])
+
+  // 로그인
+  useEffect( () => {
       authService.onAuthChange( (user) => {
-        if(!user){
+        if(user){
+          setUserId(user.uid)
+        }else{
           navigate('/');
         }
       })
@@ -61,6 +39,7 @@ const Maker = ({FileInput, authService}) => {
       updated[card.id] = card;
       return updated;
     });
+    cardRepository.saveCard(userId, card)
   };
 
   const deleteCard = (card) => {
@@ -69,6 +48,7 @@ const Maker = ({FileInput, authService}) => {
       delete updated[card.id];
       return updated;
     });
+    cardRepository.removeCard(userId, card)
   };
 
   return(
