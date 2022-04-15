@@ -1,10 +1,10 @@
-import firebaseApp from "./firebase"
+import {fireabaseDatabase} from "./firebase"
 class CardRepository {
   saveCard(userId, card){
-    firebaseApp.database().ref(`${userId}/cards/${card.id}`).set(card)
+    fireabaseDatabase.ref(`${userId}/cards/${card.id}`).set(card)
   }
   syncCard(userId, onUpdate){
-    const ref =  firebaseApp.database().ref(`${userId}/cards`);
+    const ref =  fireabaseDatabase.ref(`${userId}/cards`);
     ref.on('value', (snapshot) => {
       const value = snapshot.val();
       value && onUpdate(value)
@@ -13,7 +13,7 @@ class CardRepository {
   }
 
   removeCard(userId, card){
-    firebaseApp.database().ref(`${userId}/cards/${card.id}`).remove()
+    fireabaseDatabase.ref(`${userId}/cards/${card.id}`).remove()
   }
 
 }
