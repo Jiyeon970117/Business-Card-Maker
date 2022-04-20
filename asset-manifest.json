@@ -1,13 +1,13 @@
 {
   "files": {
     "main.css": "https://jiyeon970117.github.io/card-maker/static/css/main.0a908b7c.css",
-    "main.js": "https://jiyeon970117.github.io/card-maker/static/js/main.ccd80d8b.js",
+    "main.js": "https://jiyeon970117.github.io/card-maker/static/js/main.020dc710.js",
     "index.html": "https://jiyeon970117.github.io/card-maker/index.html",
     "main.0a908b7c.css.map": "https://jiyeon970117.github.io/card-maker/static/css/main.0a908b7c.css.map",
-    "main.ccd80d8b.js.map": "https://jiyeon970117.github.io/card-maker/static/js/main.ccd80d8b.js.map"
+    "main.020dc710.js.map": "https://jiyeon970117.github.io/card-maker/static/js/main.020dc710.js.map"
   },
   "entrypoints": [
     "static/css/main.0a908b7c.css",
-    "static/js/main.ccd80d8b.js"
+    "static/js/main.020dc710.js"
   ]
 }
