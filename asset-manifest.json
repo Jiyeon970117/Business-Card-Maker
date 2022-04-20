@@ -1,13 +1,13 @@
 {
   "files": {
-    "main.css": "https://jiyeon970117.github.io/card-maker/static/css/main.0a908b7c.css",
-    "main.js": "https://jiyeon970117.github.io/card-maker/static/js/main.020dc710.js",
-    "index.html": "https://jiyeon970117.github.io/card-maker/index.html",
-    "main.0a908b7c.css.map": "https://jiyeon970117.github.io/card-maker/static/css/main.0a908b7c.css.map",
-    "main.020dc710.js.map": "https://jiyeon970117.github.io/card-maker/static/js/main.020dc710.js.map"
+    "main.css": "https://jiyeon970117.github.io/card-maker/Busenisee/static/css/main.0a908b7c.css",
+    "main.js": "https://jiyeon970117.github.io/card-maker/Busenisee/static/js/main.59a9dd4a.js",
+    "index.html": "https://jiyeon970117.github.io/card-maker/Busenisee/index.html",
+    "main.0a908b7c.css.map": "https://jiyeon970117.github.io/card-maker/Busenisee/static/css/main.0a908b7c.css.map",
+    "main.59a9dd4a.js.map": "https://jiyeon970117.github.io/card-maker/Busenisee/static/js/main.59a9dd4a.js.map"
   },
   "entrypoints": [
     "static/css/main.0a908b7c.css",
-    "static/js/main.020dc710.js"
+    "static/js/main.59a9dd4a.js"
   ]
 }
